@@ -1,0 +1,5 @@
+team: Backend Team
+default_severity: sev3
+timezone: UTC
+postmortem_template: default
+notification_channels: []

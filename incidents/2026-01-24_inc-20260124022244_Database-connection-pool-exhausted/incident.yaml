@@ -1,0 +1,52 @@
+id: inc-20260124022244
+title: Database connection pool exhausted
+severity: sev1
+status: closed
+created_at: '2026-01-24T02:22:44.428318'
+closed_at: '2026-01-24T02:23:25.060351'
+owner: alice@example.com
+team: Backend Team
+description: API experiencing 500 errors due to database connection timeouts
+impact:
+  duration_minutes: 45
+  users_affected: 15000
+  sla_breached: true
+  revenue_impact:
+  description: API error rate spiked to 35%, affecting user login and data 
+    retrieval
+root_cause:
+  summary: Database connection pool size (10) was insufficient for peak traffic 
+    load. Under high concurrent requests, all connections were exhausted, 
+    causing new requests to timeout.
+  contributing_factors: []
+  detection_method:
+events:
+- timestamp: '2026-01-24T02:22:44.428330'
+  description: Incident created with severity SEV1
+  author: alice@example.com
+- timestamp: '2026-01-24T02:22:54.177144'
+  description: Alert received from PagerDuty - high error rate
+  author: alice@example.com
+- timestamp: '2026-01-24T02:22:54.357700'
+  description: Identified connection pool at max capacity
+  author: alice@example.com
+- timestamp: '2026-01-24T02:22:54.543547'
+  description: Increased pool size from 10 to 50
+  author: bob@example.com
+- timestamp: '2026-01-24T02:23:24.874209'
+  description: Error rate back to normal levels
+  author:
+- timestamp: '2026-01-24T02:23:25.060359'
+  description: Incident closed
+  author:
+action_items:
+- description: Implement connection pool monitoring alerts
+  owner: charlie@example.com
+  due_date: '2026-01-25T00:00:00'
+  priority: p0
+  status: open
+  jira_ticket: INFRA-1234
+links: {}
+tags: []
+what_went_well: []
+what_went_wrong: []

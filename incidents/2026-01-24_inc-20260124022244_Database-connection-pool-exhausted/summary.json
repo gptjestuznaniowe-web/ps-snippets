@@ -1,0 +1,12 @@
+{
+  "id": "inc-20260124022244",
+  "title": "Database connection pool exhausted",
+  "severity": "sev1",
+  "status": "closed",
+  "created_at": "2026-01-24T02:22:44.428318",
+  "closed_at": "2026-01-24T02:23:25.060351",
+  "owner": "alice@example.com",
+  "team": "Backend Team",
+  "action_items_count": 1,
+  "events_count": 6
+}
