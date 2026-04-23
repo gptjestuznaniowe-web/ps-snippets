@@ -1,0 +1,5 @@
+$lastrow   = $worksheet.Dimension.rows
+if ($lastrow -gt 1) {
+    Add-ConditionalFormatting   -Worksheet $worksheet -Address "I2:I$lastrow"  -RuleType Equal       -ConditionValue "MISSING"                      -BackgroundColor 'Pink' -ForegroundColor DarkRed
+    Add-ConditionalFormatting   -Worksheet $worksheet -Address "H2:H$lastrow"  -RuleType Expression  -ConditionValue "=(H2="""")"                    -BackgroundColor 'Pink' -ForegroundColor DarkRed
+}
